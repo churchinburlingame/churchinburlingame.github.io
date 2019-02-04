@@ -30,13 +30,12 @@
     }
 
     function showInfo(data, tabletop) {
-      alert("Successfully processed " + data.length + " rows!")
-
+      //alert("Successfully processed " + data.length + " rows!")
       console.log(data); // equivalent to tabletop.data()
-
-      console.log(tabletop.sheets());
-
-      document.getElementById("reading").innerHTML = "<strong>Reading:</strong> " + [data[0].Name, data[1].Name, data[2].Name].join(", ");
+      $.each(data, function( index, item ) {
+        //alert( item.id + ": " + item.value );
+        $("#"+item.id).html(item.value);
+      });
     }
 
     window.addEventListener('DOMContentLoaded', init)
@@ -54,37 +53,44 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Announcement</a>
+          <a class="nav-link" href="#">Newsletter</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#">Reading</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Prayer Meeting</a>
-        </li>
+        </li> -->
       </ul>
     </div>
   </nav>
 
   <div class="mt-4"></div>
   <h2 class="text-primary text-center">The church in Burlingame Newsletter</h2>
-  <div class="text-info text-center">Date</div>
+  <div class="text-primary text-center" id="date">Date</div>
   <div class="row">
-    <div class="offset-md-2 col-md-2">
-        <div class="lead text-info">Announcement</div>
-        <div id="announcement"></div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="offset-md-2 col-md-2">
-        <div class="lead">Read Schedule</div>
-        <div id="reading"></div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="offset-md-2 col-md-2">
-        <div class="lead">Prayer Meeting</div>
+    <div class="offset-md-2 col-md-8">
+        <div class="lead text-info text-justify">Greeting</div>
+        <div id="greeting"></div>
+
+        <div class="mt-4"></div>
+        <div class="lead text-info">Reading Schedule</div>
+        <span class="text-dark font-weight-bold">Life Study:</span>
+        <span id="life-study"></span>
+        <div class="mt-2"></div>
+        <span class="text-dark font-weight-bold">生命讀經:</span>
+        <span id="生命讀經"></span>
+
+        <div class="mt-2"></div>
+        <span class="text-dark font-weight-bold">Morning Revival:</span>
+        <span id="morning-revival"></span>
+        <div class="mt-2"></div>
+        <span class="text-dark font-weight-bold">晨興聖言:</span>
+        <span id="晨興聖言"></span>
+
+        <div class="mt-4"></div>
+        <div class="lead text-info">Prayer Meeting</div>
         <div id="prayer"></div>
-    </div>
+      </div
   </div>
 </body>
