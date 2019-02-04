@@ -25,14 +25,15 @@
       Tabletop.init({
         key: publicSpreadsheetUrl,
         callback: showInfo,
-        simpleSheet: true
+        simpleSheet: false,
+        wanted: ['latest']
       })
     }
 
     function showInfo(data, tabletop) {
-      //alert("Successfully processed " + data.length + " rows!")
-      console.log(data); // equivalent to tabletop.data()
-      $.each(data, function( index, item ) {
+      console.log(data.latest.elements); // equivalent to tabletop.data()
+      $.each(data.latest.elements, function( index, item ) {
+        //alert(item.id+':'+item.value);
         if (item.id == 'announcement') {
           if (item.value != '') {
             $("#announcements").append("<li>"+item.value+"</li>");
