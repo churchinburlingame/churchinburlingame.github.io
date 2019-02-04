@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+  <!-- Uncomment to make IE8 render like IE7 -->
+  <meta content='IE=Edge,chrome=1' http-equiv='X-UA-Compatible'>
+  <!-- Set the viewport width to device width for mobile -->
+  <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+  <title>Test</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+  <script type='text/javascript'>
+    //var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1sbyMINQHPsJctjAtMW0lCfLrcpMqoGMOJj6AN-sNQrc/pubhtml';
+    var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1BnHTTx9AjUoT5wbHFiZJChQcDoTPfmsQq8lWIgTgcOs/edit?usp=sharing';
+
+    function init() {
+      Tabletop.init({
+        key: publicSpreadsheetUrl,
+        callback: showInfo,
+        simpleSheet: true
+      })
+    }
+
+    function showInfo(data, tabletop) {
+      alert("Successfully processed " + data.length + " rows!")
+
+      console.log(data); // equivalent to tabletop.data()
+
+      console.log(tabletop.sheets());
+
+      document.getElementById("reading").innerHTML = "<strong>Reading:</strong> " + [data[0].Name, data[1].Name, data[2].Name].join(", ");
+    }
+
+    window.addEventListener('DOMContentLoaded', init)
+  </script>
+
+</head>
+
+<body class='home home-index'>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">The Church in Burlingame Newsletter</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Announcement</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Reading</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Prayer Meeting</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  <div class="lead">Read Schedule</div>
+  <div id="reading">
+
+  </div>
+</body>
