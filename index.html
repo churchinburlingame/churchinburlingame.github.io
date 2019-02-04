@@ -33,8 +33,13 @@
       //alert("Successfully processed " + data.length + " rows!")
       console.log(data); // equivalent to tabletop.data()
       $.each(data, function( index, item ) {
-        //alert( item.id + ": " + item.value );
-        $("#"+item.id).html(item.value);
+        if (item.id == 'announcement') {
+          if (item.value != '') {
+            $("#announcements").append("<li>"+item.value+"</li>");
+          }
+        } else {
+          $("#"+item.id).html(item.value);
+        }
       });
     }
 
@@ -67,7 +72,7 @@
 
   <div class="mt-4"></div>
   <h2 class="text-primary text-center">The church in Burlingame Newsletter</h2>
-  <div class="text-primary text-center" id="date">Date</div>
+  <div class="text-primary text-center font-weight-bold" id="date"></div>
   <div class="row">
     <div class="offset-md-2 col-md-8">
         <div class="lead text-info text-justify">Greeting</div>
@@ -98,13 +103,7 @@
 
         <div class="mt-4"></div>
         <div class="lead text-info">Announcements:</div>
-        <ul>
-          <li id="announcement1"></li>
-          <li id="announcement2"></li>
-          <li id="announcement3"></li>
-          <li id="announcement4"></li>
-          <li id="announcement5"></li>
-        </ul>
+        <ul id="announcements"></ul>
       </div
   </div>
 </body>
