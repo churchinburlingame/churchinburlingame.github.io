@@ -18,14 +18,11 @@
   <title>The Church in Burlingame Newsletter</title>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
   <script type='text/javascript'>
-    //var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1sbyMINQHPsJctjAtMW0lCfLrcpMqoGMOJj6AN-sNQrc/pubhtml';
-    var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1BnHTTx9AjUoT5wbHFiZJChQcDoTPfmsQq8lWIgTgcOs/edit?usp=sharing';
-
     function init() {
       Tabletop.init({
-        key: publicSpreadsheetUrl,
+        key: 'https://docs.google.com/spreadsheets/d/1BnHTTx9AjUoT5wbHFiZJChQcDoTPfmsQq8lWIgTgcOs/edit?usp=sharing',
         callback: showInfo,
-        simpleSheet: false,
+        simpleSheet: false, //load multiple sheets
         wanted: ['latest']
       })
     }
@@ -33,7 +30,6 @@
     function showInfo(data, tabletop) {
       console.log(data.latest.elements); // equivalent to tabletop.data()
       $.each(data.latest.elements, function( index, item ) {
-        //alert(item.id+':'+item.value);
         if (item.id == 'announcement') {
           if (item.value != '') {
             $("#announcements").append("<li>"+item.value+"</li>");
@@ -60,13 +56,7 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="#">Newsletter</a>
-        </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Reading</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Prayer Meeting</a>
-        </li> -->
+        </li>        
       </ul>
     </div>
   </nav>
@@ -79,7 +69,6 @@
         <div class="mt-4"></div>
         <!-- <div class="lead text-info">Greeting</div> -->
         <div id="greeting" class="text-justify"></div>
-
         <hr>
         <div class="lead text-success">Reading Schedule</div>
         <span class="text-dark font-weight-bold">Life Study:</span>
