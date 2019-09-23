@@ -29,13 +29,13 @@
 
     function showInfo(data, tabletop) {
       console.log(data.latest.elements); // equivalent to tabletop.data()
-      $.each(data.latest.elements, function( index, item ) {
+      $.each(data.latest.elements, function(index, item) {
         if (item.id == 'announcement') {
           if (item.value != '') {
-            $("#announcements").append("<li>"+item.value+"</li>");
+            $("#announcements").append("<li>" + item.value + "</li>");
           }
         } else {
-          $("#"+item.id).html(item.value);
+          $("#" + item.id).html(item.value);
         }
       });
     }
@@ -58,6 +58,11 @@
           <a class="nav-link" href="#">Newsletter</a>
         </li>
       </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="https://kw4w9vtak7.execute-api.us-west-2.amazonaws.com/1_0/newsletters">Send to All</a>
+        </li>
+      </ul>
     </div>
   </nav>
 
@@ -66,53 +71,51 @@
   <div class="text-primary text-center font-weight-bold" id="date"></div>
   <div class="row p-l-2 p-r-2">
     <div class="offset-md-3 col-md-6">
-        <div class="mt-4"></div>
-        <!-- <div class="lead text-info">Greeting</div> -->
-        <div id="greeting" class="text-justify"></div>
-        <hr>
-        <div class="lead text-success">Reading Schedule</div>
-        <span class="text-dark font-weight-bold">Life Study:</span>
-        <span id="life-study"></span>
-        <div class="mt-2"></div>
-        <span class="text-dark font-weight-bold">生命讀經:</span>
-        <span id="生命讀經"></span>
+      <div class="mt-4"></div>
+      <!-- <div class="lead text-info">Greeting</div> -->
+      <div id="greeting" class="text-justify"></div>
+      <hr>
+      <div class="lead text-success">Reading Schedule</div>
+      <span class="text-dark font-weight-bold">Life Study:</span>
+      <span id="life-study"></span>
+      <div class="mt-2"></div>
+      <span class="text-dark font-weight-bold">生命讀經:</span>
+      <span id="生命讀經"></span>
 
-        <div class="mt-2"></div>
-        <span class="text-dark font-weight-bold">Morning Revival:</span>
-        <span id="morning-revival"></span>
-        <div class="mt-2"></div>
-        <span class="text-dark font-weight-bold">晨興聖言:</span>
-        <span id="晨興聖言"></span>
+      <div class="mt-2"></div>
+      <span class="text-dark font-weight-bold">Morning Revival:</span>
+      <span id="morning-revival"></span>
+      <div class="mt-2"></div>
+      <span class="text-dark font-weight-bold">晨興聖言:</span>
+      <span id="晨興聖言"></span>
 
-        <div class="mt-4"></div>
-        <div class="lead text-success">Meetings</div>
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <td></td>
-              <td>Location</td>
-              <td>Address</td>
-              <td>Time</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>English-Speaking Prayer Meeting</td>
-              <td><span id="english-speaking-prayer"></span></td>
-              <td><span id="english-speaking-prayer-location"></span></td>
-              <td>7:30pm</td>
-            </tr>
-            <tr>
-              <td>Chinese-Speaking Prayer Meeting</td>
-              <td><span id="chinese-speaking-prayer"></span></td>
-              <td><span id="chinese-speaking-prayer-location"></span></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="mt-4"></div>
-        <div class="lead text-success">Announcements:</div>
-        <ul id="announcements" class="text-justify"></ul>
-      </div
-  </div>
-</body>
+      <div class="mt-4"></div>
+      <div class="lead text-success">Meetings</div>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <td></td>
+            <td>Location</td>
+            <td>Address</td>
+            <td>Time</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>English-Speaking Prayer Meeting</td>
+            <td><span id="english-speaking-prayer"></span></td>
+            <td><span id="english-speaking-prayer-location"></span></td>
+            <td>7:30pm</td>
+          </tr>
+          <tr>
+            <td>Chinese-Speaking Prayer Meeting</td>
+            <td><span id="chinese-speaking-prayer"></span></td>
+            <td><span id="chinese-speaking-prayer-location"></span></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="mt-4"></div>
+      <div class="lead text-success">Announcements:</div>
+      <ul id="announcements" class="text-justify"></ul>
+    </div </div> </body>
