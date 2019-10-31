@@ -29,7 +29,7 @@
 
     function replaceURLWithHTMLLinks(text) {
       var exp = /(\b((https?|ftp|file):\/\/|(www))[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|]*)/ig;
-      return text.replace(exp,"<a href='$1' target='_blank'>$1</a>");
+      return text.replace(exp, "<a href='$1' target='_blank'>$1</a>");
     }
 
     function showInfo(data, tabletop) {
@@ -80,9 +80,9 @@
       <div class="mt-4"></div>
       <!-- <div class="lead text-info">Greeting</div> -->
       <div id="greeting" class="text-justify"></div>
-      </br>
+      <div class="mt-4"></div>
       <div id="paragraph1" class="text-justify"></div>
-      </br>
+      <div class="mt-4"></div>
       <div id="paragraph2" class="text-justify"></div>
       <hr>
       <div class="lead text-success">Reading Schedule</div>
@@ -128,4 +128,13 @@
       <div class="mt-4"></div>
       <div class="lead text-success">Announcements:</div>
       <ul id="announcements" class="text-justify"></ul>
-    </div </div> </body>
+    </div>
+  </div>
+  <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="offset-md-3 col-md-6">
+        <a href="https://docs.google.com/forms/d/1M53RDuBHAPwmpmj6vix7G_nYNTAJaLYNxUkSkXI9jV8/edit#responses" target="_blank">Subscribe / Unsubscribe</a>
+      </div>
+    </div>
+  </footer>
+</body>
