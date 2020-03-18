@@ -9,11 +9,12 @@
   <meta content='width=device-width, initial-scale=1.0' name='viewport'>
   <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <title>The Church in Burlingame Newsletter</title>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
@@ -48,93 +49,168 @@
 
     window.addEventListener('DOMContentLoaded', init)
   </script>
-
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">The Church in Burlingame</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <a class="navbar-brand" href="#">The Church in Burlingame Newsletter</a>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <!-- <div class="collapse navbar-collapse" id="navbar-content">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Newsletter</a>
+          <a class="nav-link active" role="tab" aria-controls="newsletter" href="#newsletter" data-toggle="tab">Newsletter</a>
         </li>
       </ul>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="https://kw4w9vtak7.execute-api.us-west-2.amazonaws.com/1_0/newsletters">Send to All</a>
-        </li>
-      </ul>
-    </div>
+    </div> -->
   </nav>
 
-  <div class="mt-4"></div>
-  <h2 class="text-primary text-center">The church in Burlingame Newsletter</h2>
-  <div class="text-primary text-center font-weight-bold" id="date"></div>
-  <div class="row p-l-2 p-r-2">
+  <div class="mt-5"></div>
+  <div class="row">
     <div class="offset-md-3 col-md-6">
-      <div class="mt-4"></div>
-      <!-- <div class="lead text-info">Greeting</div> -->
-      <div id="greeting" class="text-justify"></div>
-      <div class="mt-4"></div>
-      <div id="paragraph1" class="text-justify"></div>
-      <div class="mt-4"></div>
-      <div id="paragraph2" class="text-justify"></div>
-      <hr>
-      <div class="lead text-success">Reading Schedule</div>
-      <span class="text-dark font-weight-bold">Life Study:</span>
-      <span id="life-study"></span>
-      <div class="mt-2"></div>
-      <span class="text-dark font-weight-bold">生命讀經:</span>
-      <span id="生命讀經"></span>
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-newsletter-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Newsletter</a>
+          <a class="nav-item nav-link" id="nav-meetings-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Remote Meetings</a>
+          <a class="nav-item nav-link" id="nav-subscribe-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Subscribe</a>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+          <div class="mt-5"></div>
+          <h2 class="text-primary text-center">The church in Burlingame Newsletter</h2>
+          <div class="text-primary text-center font-weight-bold" id="date"></div>
 
-      <div class="mt-2"></div>
-      <span class="text-dark font-weight-bold">Morning Revival:</span>
-      <span id="morning-revival"></span>
-      <div class="mt-2"></div>
-      <span class="text-dark font-weight-bold">晨興聖言:</span>
-      <span id="晨興聖言"></span>
+          <div class="row p-l-2 p-r-2">
+            <div class="col-md-12">
+              <div class="mt-4"></div>
+              <!-- <div class="lead text-info">Greeting</div> -->
+              <div id="greeting" class="text-justify"></div>
+              <div class="mt-4"></div>
+              <div id="paragraph1" class="text-justify"></div>
+              <div class="mt-4"></div>
+              <div id="paragraph2" class="text-justify"></div>
+              <hr>
+              <div class="lead text-success">Reading Schedule</div>
+              <span class="text-dark font-weight-bold">Life Study:</span>
+              <span id="life-study"></span>
+              <div class="mt-2"></div>
+              <span class="text-dark font-weight-bold">生命讀經:</span>
+              <span id="生命讀經"></span>
 
-      <div class="mt-4"></div>
-      <div class="lead text-success">Meetings</div>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <td></td>
-            <td>Location</td>
-            <td>Address</td>
-            <td>Time</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>English-Speaking Prayer Meeting</td>
-            <td><span id="english-speaking-prayer"></span></td>
-            <td><span id="english-speaking-prayer-location"></span></td>
-            <td>7:30pm</td>
-          </tr>
-          <tr>
-            <td>Chinese-Speaking Prayer Meeting</td>
-            <td><span id="chinese-speaking-prayer"></span></td>
-            <td><span id="chinese-speaking-prayer-location"></span></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="mt-4"></div>
-      <div class="lead text-success">Announcements:</div>
-      <ul id="announcements" class="text-justify"></ul>
+              <div class="mt-2"></div>
+              <span class="text-dark font-weight-bold">Morning Revival:</span>
+              <span id="morning-revival"></span>
+              <div class="mt-2"></div>
+              <span class="text-dark font-weight-bold">晨興聖言:</span>
+              <span id="晨興聖言"></span>
+
+              <div class="mt-4"></div>
+              <div class="lead text-success">Meetings</div>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <td></td>
+                    <td>Location</td>
+                    <td>Address</td>
+                    <td>Time</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>English-Speaking Prayer Meeting</td>
+                    <td><span id="english-speaking-prayer"></span></td>
+                    <td><span id="english-speaking-prayer-location"></span></td>
+                    <td>7:30pm</td>
+                  </tr>
+                  <tr>
+                    <td>Chinese-Speaking Prayer Meeting</td>
+                    <td><span id="chinese-speaking-prayer"></span></td>
+                    <td><span id="chinese-speaking-prayer-location"></span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="mt-4"></div>
+              <div class="lead text-success">Announcements:</div>
+              <ul id="announcements" class="text-justify"></ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <div class="row p-l-2 p-r-2">
+            <div class="col-md-12">
+              <div class="mt-4"></div>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <td>Meeting Name</td>
+                    <td>Time</td>
+                    <td>Meeting Link</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>English-Speaking Prayer</td>
+                    <td>Weds at 7:30pm</td>
+                    <td><span id="english-speaking-prayer"></span>
+                      https://zoom.us/j/3592904716
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Chinese-Speaking Prayer</td>
+                    <td>Weds at 7:30pm</td>
+                    <td><span id="chinese-speaking-prayer"></span></td>
+                  </tr>
+                  <tr>
+                    <td>English-Speaking Lord's Table</td>
+                    <td>Lord's Days from 9:30am-12pm</td>
+                    <td><span id="english-lords-table"></span></td>
+
+                  </tr>
+
+                  <tr>
+                    <td>Chinese-Speaking Lord's Table</td>
+                    <td>Lord's Days from 9:30am-12pm</td>
+                    <td><span id="chinese-lords-table"></span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+          <div class="mt-4"></div>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe5ZCBNmPzXlSEFWF25yhaFpI5oAM0iQBdwQKjT-lUFrMpvyA/viewform?embedded=true" width="640" height="915" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+      </div>
     </div>
   </div>
-  <footer class="pt-4 my-md-5 pt-md-5 border-top">
+
+  <div class="mt-5"></div>
+  <footer class="pt-4 pb-4 border-top">
     <div class="row">
       <div class="offset-md-3 col-md-6">
-        <a href="https://docs.google.com/forms/d/1M53RDuBHAPwmpmj6vix7G_nYNTAJaLYNxUkSkXI9jV8/edit#responses" target="_blank">Subscribe / Unsubscribe</a>
+        <p class="text-center">
+          <a href="https://docs.google.com/forms/d/1M53RDuBHAPwmpmj6vix7G_nYNTAJaLYNxUkSkXI9jV8/edit#responses" target="_blank">Subscribe / Unsubscribe</a>
+        </p>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="offset-md-3 col-md-6">
+        <p class="text-center">
+          Copyright @churchinburlingame
+        </p>
       </div>
     </div>
   </footer>
+
+
+
+  <script>
+    $(document).ready(function() {
+      $("#navbar-content li:eq(2) a.nav-link").tab('show');
+    });
+  </script>
 </body>

@@ -1,0 +1,12 @@
+{
+   "index": "index.html",
+   "region": "us-east-1",
+   "uploadDir": ".",
+   "prefix": "",
+   "exclude": [],
+   "corsConfiguration": [],
+   "enableCloudfront": false,
+   "retries": 20,
+   "domain": "static-church-in-burlingame-newsletter",
+   "configFile": ".s3-website.json"
+}
