@@ -70,8 +70,9 @@
       <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
           <a class="nav-item nav-link active" id="nav-newsletter-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Newsletter</a>
-          <a class="nav-item nav-link" id="nav-meetings-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Remote Meetings</a>
-          <a class="nav-item nav-link" id="nav-subscribe-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Subscribe</a>
+          <a class="nav-item nav-link" id="nav-meeting-tab" data-toggle="tab" href="#nav-meeting" role="tab" aria-controls="nav-meeting" aria-selected="false">Remote Meetings</a>
+          <a class="nav-item nav-link" id="nav-subscribe-tab" data-toggle="tab" href="#nav-subscribe" role="tab" aria-controls="nav-subscribe" aria-selected="false">Subscribe</a>
+          <a class="nav-item nav-link" id="nav-offering-tab" data-toggle="tab" href="#nav-offering" role="tab" aria-controls="nav-offering" aria-selected="false">Offering</a>
         </div>
       </nav>
       <div class="tab-content" id="nav-tabContent">
@@ -137,7 +138,7 @@
           </div>
         </div>
 
-        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-meeting-tab">
           <div class="row p-l-2 p-r-2">
             <div class="col-md-12">
               <div class="mt-4"></div>
@@ -179,14 +180,29 @@
             </div>
           </div>
         </div>
-        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <div class="tab-pane fade" id="nav-subscribe" role="tabpanel" aria-labelledby="nav-subscribe-tab">
           <div class="mt-4"></div>
           <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe5ZCBNmPzXlSEFWF25yhaFpI5oAM0iQBdwQKjT-lUFrMpvyA/viewform?embedded=true" width="640" height="915" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+
+        <div class="tab-pane fade" id="nav-offering" role="tabpanel" aria-labelledby="nav-offering-tab">
+          <div class="mt-4"></div>
+          <div class="row">
+            <div class="offset-md-3 col-md-6">
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick" />
+                <input type="hidden" name="hosted_button_id" value="C24QHAZ9CYHSS" />
+                <button class="btn btn-lg btn-primary">Offering by PayPal</button>
+                <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+              </form>
+
+              <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=C24QHAZ9CYHSS&source=url">Share Link</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
   <div class="mt-5"></div>
   <footer class="pt-4 pb-4 border-top">
     <div class="row">
@@ -205,8 +221,6 @@
       </div>
     </div>
   </footer>
-
-
 
   <script>
     $(document).ready(function() {
