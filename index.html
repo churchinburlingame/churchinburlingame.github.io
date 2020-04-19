@@ -72,7 +72,7 @@
           <a class="nav-item nav-link active" id="nav-newsletter-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Newsletter</a>
           <a class="nav-item nav-link" id="nav-meeting-tab" data-toggle="tab" href="#nav-meeting" role="tab" aria-controls="nav-meeting" aria-selected="false">Remote Meetings</a>
           <a class="nav-item nav-link" id="nav-subscribe-tab" data-toggle="tab" href="#nav-subscribe" role="tab" aria-controls="nav-subscribe" aria-selected="false">Subscribe</a>
-          <a class="nav-item nav-link" id="nav-offering-tab" data-toggle="tab" href="#nav-offering" role="tab" aria-controls="nav-offering" aria-selected="false">Offering</a>
+          <a class="nav-item nav-link" id="nav-sms-tab" data-toggle="tab" href="#nav-sms" role="tab" aria-controls="nav-sms" aria-selected="false">SMS</a>
         </div>
       </nav>
       <div class="tab-content" id="nav-tabContent">
@@ -212,20 +212,22 @@
           <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe5ZCBNmPzXlSEFWF25yhaFpI5oAM0iQBdwQKjT-lUFrMpvyA/viewform?embedded=true" width="640" height="915" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
 
-        <div class="tab-pane fade" id="nav-offering" role="tabpanel" aria-labelledby="nav-offering-tab">
+        <div class="tab-pane fade" id="nav-sms" role="tabpanel" aria-labelledby="nav-sms-tab">
           <div class="mt-4"></div>
-          <div class="row">
-            <div class="offset-md-3 col-md-6">
-              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                <input type="hidden" name="cmd" value="_s-xclick" />
-                <input type="hidden" name="hosted_button_id" value="C24QHAZ9CYHSS" />
-                <button class="btn btn-lg btn-primary">Offering by PayPal</button>
-                <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-              </form>
-
-              <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=C24QHAZ9CYHSS&source=url">Share Link</a>
+          <div class="text-danger">Be careful. This will send a SMS to all the subscribers.</div>
+          <div class="mt-4"></div>
+          <form action="https://ly1aha29w8.execute-api.us-west-2.amazonaws.com/production/subscription" method="get">
+            <div class="form-group">
+              <label for="message">SMS</label>
+              <textarea name="message" class="form-control"></textarea>
             </div>
-          </div>
+            <div class="form-group">
+              <label for="api_key">PASSWORD</label>
+              <input name="api_key" type="text" class="form-control">
+              <small id="emailHelp" class="form-text text-muted">You should know the correct api key if you are authorized to send this message.</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+          </form>
         </div>
       </div>
     </div>
